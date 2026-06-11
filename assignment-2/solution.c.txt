@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+volatile int sink;
+void linear(int n) {
+ int *arr = (int *)malloc(n * sizeof(int));
+ for (int i = 0; i < n; i++)
+ sink = i;
+ free(arr);
+}
+void logarithmic(int n) {
+ while (n > 1) {
+ sink = n;
+ n /= 2;
+ }
+}
+void quadratic(int n) {
+ for (int i = 0; i < n; i++)
+ for (int j = 0; j < n; j++)
+ sink = i + j;
+}
+int main() {
+ int inputs[] = {1000, 5000, 10000};
+ for (int i = 0; i < 3; i++) {
+ printf("\nInput Size: %d\n", inputs[i]);
+ linear(inputs[i]);
+ printf("Linear -> Space Complexity: O(n)\n");
+ logarithmic(inputs[i]);
+ printf("Logarithmic -> Space Complexity: O(1)\n");
+ quadratic(inputs[i]);
+ printf("Quadratic -> Space Complexity: O(1)\n");
+ }
+ return 0;
+}
