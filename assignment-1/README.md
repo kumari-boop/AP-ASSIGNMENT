@@ -3,10 +3,12 @@
 ## Question
 
 Write a C program to analyze time complexities in constant time, linear time and quadratic
+time. Increase the size of input to check the time consumed.
 
 ## solution
 
 #include <stdio.h>
+#include <time.h>
 
 void linear(int n) {
 for (int i = 0; i < n; i++);
