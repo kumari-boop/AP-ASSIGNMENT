@@ -30,3 +30,5 @@ f. Use reduce() to compute total activity time.
 4. Perform complexity analysis:
 a. Time complexity for computing top K users
 b. Space complexity of storing intermediate results
+
+## solution
