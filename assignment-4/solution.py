@@ -1,0 +1,13 @@
+products = [
+    {"name": "Laptop", "stock": 15},
+    {"name": "Mouse", "stock": 8},
+    {"name": "Keyboard", "stock": 5},
+    {"name": "Monitor", "stock": 12},
+    {"name": "USB Cable", "stock": 3}
+]
+
+print("Products with stock less than 10:\n")
+
+for product in products:
+    if product["stock"] < 10:
+        print(f"{product['name']} - Stock: {product['stock']}")
