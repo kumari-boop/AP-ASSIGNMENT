@@ -4,4 +4,4 @@ function App() {
   return <TodoList />;
 }
 
-export default App;
+export default App
