@@ -4,11 +4,12 @@ import gc
 gc.enable()
 
 class Node:
-def __init__(self, name):
-self.name = name
-self.link = None
-def __del__(self):
-print(f"{self.name} is being destroyed")
+    def __init__(self, name):
+        self.name = name
+        self.link = None
+
+    def __del__(self):
+        print(f"{self.name} is being destroyed")
 
 # -----------------------------
 # Step 1: Create Nodes
@@ -44,12 +45,12 @@ print("\nDeleted A and B variables")
 print("\nChecking objects still tracked by GC:")
 found = False
 for obj in gc.get_objects():
-if id(obj) == a_id or id(obj) == b_id:
-print(f"Object still exists in memory: {obj.name}")
+ if id(obj) == a_id or id(obj) == b_id:
+  print(f"Object still exists in memory: {obj.name}")
 found = True
 
 if not found:
-print("Objects not found")
+ print("Objects not found")
 # -----------------------------
 # Step 6: Force Garbage Collection
 # -----------------------------
@@ -62,8 +63,8 @@ print("Unreachable objects collected:", collected)
 print("\nChecking again after gc.collect():")
 found = False
 for obj in gc.get_objects():
-if id(obj) == a_id or id(obj) == b_id:
-print(f"Still exists: {obj.name}")
+ if id(obj) == a_id or id(obj) == b_id:
+  print(f"Still exists: {obj.name}")
 found = True
 if not found:
-print("Cycle cleaned successfully")
+ print("Cycle cleaned successfully")
